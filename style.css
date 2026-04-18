@@ -1,0 +1,328 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #38bdf8;
+    --accent: #6366f1;
+    --dark: #0f172a;
+    --glass: rgba(255,255,255,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e5e7eb;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: var(--glass);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.hero {
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent), transparent 60%);
+    top: -200px;
+    right: -150px;
+    opacity: 0.3;
+    animation: floatBg 10s infinite alternate;
+}
+
+@keyframes floatBg {
+    from { transform: translateY(0); }
+    to { transform: translateY(40px); }
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    max-width: 520px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+
+.btn {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    padding: 12px 28px;
+    border-radius: 999px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 8px 20px rgba(99,102,241,0.3);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(99,102,241,0.5);
+}
+
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 260px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    animation: float 5s ease-in-out infinite;
+}
+
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+
+.section {
+    padding: 90px 0;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+
+.skills-grid span {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: 0.3s;
+}
+
+.skills-grid span:hover {
+    background: var(--primary);
+}
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+
+
+.skill{
+    margin-bottom:25px;
+}
+
+.skill p{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+.skill-bar{
+    width:100%;
+    height:10px;
+    background:rgba(255,255,255,0.08);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    background:linear-gradient(90deg,#38bdf8,#6366f1);
+    border-radius:10px;
+}
+
+
+
+.skill-fill.html{
+    width:40%;
+}
+
+.skill-fill.css{
+    width:35%;
+}
+
+.skill-fill.python{
+    width:30%;
+}
+
+.skill-fill.js{
+    width:20%;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    transition: 0.4s ease;
+}
+
+
+#projects .project-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;   
+    background: #0f172a;
+    transition: transform 0.6s ease;   
+}
+
+
+
+#hobbies .project-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.6s ease;      
+}
+
+.project-card:hover img {
+    transform: scale(1.12);
+}
+
+
+.project-overlay {
+    position:absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+    opacity: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    transition: 0.4s;
+}
+
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+
+.project-overlay h3,
+.project-overlay p {
+    transform: translateY(20px);
+    transition: 0.4s;
+}
+
+.project-card:hover .project-overlay h3,
+.project-card:hover .project-overlay p {
+    transform: translateY(0);
+}
+
+
+.project-card:hover {
+    box-shadow: 0 25px 60px rgba(56,189,248,0.25);
+}
+
+#contact p{
+    margin:10px 0;
+    font-size:16px;
+}
+
+#contact i{
+    color:#38bdf8;
+    margin-right:10px;
+}
+
+footer {
+    background: #020617;
+    text-align: center;
+    padding: 25px 0;
+    color: #94a3b8;
+}
+
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
