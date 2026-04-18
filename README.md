@@ -39,7 +39,9 @@ Coffe
 📬 Contact & Links
 
 📧 Email: esbosk@sic.edu.ph
+
 📘 Facebook: Sean Esbo
+
 💻 GitHub: https://github.com/esbosk-afk
 
 ---
